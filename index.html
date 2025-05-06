@@ -10,14 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
     <!-- styles  -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
     <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- title  -->
     <title>test</title>
   </head>
@@ -325,10 +325,123 @@
             </div>
           </div>
         </section>
+        <section class="navigated-sections__section navigated-sections__section--project-materials">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="navigated-sections__section-content navigated-sections__section-content--project-materials">
+                  <h2>Project Video</h2>
+                  <div class="video-thumbnail" id="openVideoModal">
+                    <img src="images/Zcpdlfb4KyWvA8ji1IVtmBei2gW0YLRlIiIZizTT.webp" alt="project-materials">
+                    <span class="play-icon"><i class="fa-solid fa-play"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mt-5">
+                <div class="navigated-sections__section-content navigated-sections__section-content--project-materials">
+                  <h2>Construction Update</h2>
+                  <div class="construction-update-slider">
+                    <div class="swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="images/GS1EGykOBCL2IT2civtm5tUj4FSzuhcni7hfuBpu.jpg" alt="construction-update-1">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="images/X0yJYS4Bw9JDk4Y1bNmG8vGu3nVq8LOWcLgl6mVM.png" alt="construction-update-2">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="images/HKXKvkUAAbH1V2WFFjMNT4tN35FQ21KP4CdoGQFh.webp" alt="construction-update-3">
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mt-4 w-100">
+                        <div id="swiper-slide-text" class="swiper-slide-text"></div>
+                        <div class="construction-update-slider-pagination"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="navigated-sections__contact">
+          <div class="navigated-sections__contact-info">
+            <h2>Ready for a new living <span>Experience?</span></h2>
+            <p>Register your interest now for more information</p>
+          </div>
+          <div class="navigated-sections__contact-form">
+            <form action="">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="text" placeholder="Full Name" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="email" placeholder="Email" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select name="" id="">
+                      <option value="">Select Country</option>
+                      <option value="">Egypt (+20)</option>
+                      <option value="">United Arab Emirates (2)</option>
+                      <option value="">United States (1)</option>
+                      <option value="">United Kingdom (1)</option>
+                      <option value="">Canada (1)</option>
+                      <option value="">Australia (1)</option>
+                      <option value="">New Zealand (1)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Phone" />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <select name="" id="">
+                      <option value="">Enquire type</option>
+                      <option value="">Clint</option>
+                      <option value="">Agent</option>
+                      <option value="">Media</option>
+                      <option value="">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                      <span>Maximum 250 words</span>
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Message"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group-checkbox">
+                    <input type="checkbox" name="" id="" />
+                    <label for="">I agree to receive commercial electronic messages.</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group-checkbox">
+                    <input type="checkbox" name="" id="" />
+                    <label for="">By using this form, you accept the <a href="#">Website Cookies</a> and <a href="#">Privacy Policy</a></label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group-button">
+                <button type="submit" class="send-button">Submit</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
     </section>
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".location-swiper", {
         slidesPerView: 3,
@@ -338,9 +451,17 @@
           nextEl: ".location-swiper-button-next",
           prevEl: ".location-swiper-button-prev",
         },
-        // Remove pagination
-        // Always 3 slides per view
       });
     </script>
+    <!-- Modal Structure -->
+    <div id="videoModal" class="modal-video">
+      <div class="modal-content">
+        <span class="close-modal" id="closeVideoModal">&times;</span>
+        <iframe id="youtubeFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+
+    <script src="js/web.js"></script>
   </body>
 </html>
