@@ -22,6 +22,17 @@ window.onclick = function(event) {
 }
 
 
+var swiper = new Swiper(".location-swiper", {
+  slidesPerView: 3,
+  spaceBetween: 32,
+  loop: true,
+  navigation: {
+    nextEl: ".location-swiper-button-next",
+    prevEl: ".location-swiper-button-prev",
+  },
+});
+
+
 var swiper = new Swiper(".construction-update-slider .swiper", {
   slidesPerView: 1,
   spaceBetween: 32,
@@ -63,4 +74,37 @@ document.getElementById('swiper-slide-text').textContent = slideTexts[0];
 swiper.on('slideChange', function () {
   const idx = swiper.realIndex; // realIndex is the visible slide index
   document.getElementById('swiper-slide-text').textContent = slideTexts[idx];
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // For every nested tab group
+  document.querySelectorAll('ul.nav-tabs[id^="nestedTab"]').forEach(function(tabList) {
+    const tabLinks = tabList.querySelectorAll('.nav-link');
+    const prevBtn = tabList.querySelector('.tab-arrow-prev');
+    const nextBtn = tabList.querySelector('.tab-arrow-next');
+
+    function getActiveTabIdx() {
+      return Array.from(tabLinks).findIndex(tab => tab.classList.contains('active'));
+    }
+
+    function activateTab(idx) {
+      if (idx < 0 || idx >= tabLinks.length) return;
+      tabLinks[idx].click();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        const idx = getActiveTabIdx();
+        if (idx > 0) activateTab(idx - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        const idx = getActiveTabIdx();
+        if (idx < tabLinks.length - 1) activateTab(idx + 1);
+      });
+    }
+  });
 });
