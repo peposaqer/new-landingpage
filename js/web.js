@@ -1,4 +1,3 @@
-
 const openBtn = document.getElementById('openVideoModal');
 const modal = document.getElementById('videoModal');
 const closeBtn = document.getElementById('closeVideoModal');
@@ -107,4 +106,105 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
+});
+
+  // Initialize Interiors Swiper
+  var interiorsSwiper = new Swiper(".interiors-swiper", {
+    effect: "cards",
+    grabCursor: true,
+    // centeredSlides: true,
+    slidesPerView: 1,
+    initialSlide: 1,
+    // loop: true,
+    navigation: {
+      nextEl: ".interiors-swiper-button-next",
+      prevEl: ".interiors-swiper-button-prev",
+    },
+    // pagination: {
+    //   el: ".interiors-swiper-pagination",
+    //   clickable: true,
+    // },
+    cardsEffect: {
+      perSlideOffset: 8,
+      perSlideRotate: 2,
+      rotate: true,
+      slideShadows: true,
+    },
+  });
+
+  // Initialize Interiors Swiper
+  var interiorsSwiper = new Swiper(".interiors2-swiper", {
+    effect: "cards",
+    grabCursor: true,
+    // centeredSlides: true,
+    slidesPerView: 1,
+    initialSlide: 1,
+    // loop: true,
+    navigation: {
+      nextEl: ".interiors2-swiper-button-next",
+      prevEl: ".interiors2-swiper-button-prev",
+    },
+    // pagination: {
+    //   el: ".interiors-swiper-pagination",
+    //   clickable: true,
+    // },
+    cardsEffect: {
+      perSlideOffset: 8,
+      perSlideRotate: 2,
+      rotate: true,
+      slideShadows: true,
+    },
+  });
+
+// Smooth scrolling and active section highlighting
+document.addEventListener('DOMContentLoaded', function() {
+    const navButtons = document.querySelectorAll('.navigated-sections__nav-button');
+    const sections = document.querySelectorAll('.navigated-sections__section');
+    
+    // Function to handle smooth scrolling
+    function scrollToSection(targetId) {
+        const targetSection = document.querySelector(`.navigated-sections__section--${targetId}`);
+        if (targetSection) {
+            targetSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+
+    // Add click event listeners to nav buttons
+    navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            scrollToSection(targetId);
+        });
+    });
+
+    // Function to update active button based on scroll position
+    function updateActiveButton() {
+        const scrollPosition = window.scrollY;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Offset for better trigger point
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const sectionId = section.classList[1].split('--')[1]; // Get section ID from class
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                // Remove active class from all buttons
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to corresponding button
+                const activeButton = document.querySelector(`.navigated-sections__nav-button[data-target="${sectionId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+            }
+        });
+    }
+
+    // Add scroll event listener
+    window.addEventListener('scroll', updateActiveButton);
+    
+    // Initial check for active section
+    updateActiveButton();
 });
