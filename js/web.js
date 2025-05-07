@@ -208,3 +208,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check for active section
     updateActiveButton();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTop = document.querySelector('.back-to-top');
+    
+    // Function to handle scroll behavior
+    function handleScroll() {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    }
+
+    // Add click event to scroll to top
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check
+    handleScroll();
+});

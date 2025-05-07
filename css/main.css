@@ -1020,6 +1020,110 @@ html {
   scroll-margin-top: 80px; /* Adjust this value based on your nav height */
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* background-color: var(--primary-color); */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.back-to-top svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.back-to-top:hover {
+  /* background-color: #000; */
+  transform: translateY(-5px);
+  color: #fff;
+}
+
+.back-to-top:hover svg {
+  fill: #fac25a;
+}
+
+.social-media-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.social-media-icons a {
+  color: #fff;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-media-icons a i {
+  font-size: 16px;
+}
+
+
+.social-media-icons a:hover {
+  color: #fff;
+  /* transform: translateY(-5px); */
+  transition: all 0.3s ease;
+  background-color: #fac25a;
+  border-radius: 20px 0 0 0;
+  padding: 10px;
+}
+
+.navbar {
+  position: relative;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 0 15px rgba(83, 83, 83, .6);
+  height: 80px;
+}
+
+.navbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.navbar__logo img {
+  width: 100%;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.navbar__contact {
+  display: flex;
+}
+
+.navbar__contact a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 
 
 
