@@ -1147,6 +1147,27 @@ html {
   color: #fac25a;
 }
 
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__lang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__lang button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+
 .hero {
   position: relative;
   z-index: 1;
