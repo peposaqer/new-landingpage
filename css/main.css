@@ -1160,6 +1160,11 @@ html {
   z-index: 10;
 }
 
+html[dir="rtl"] .hero__overlay {
+  left: 0;
+  right: 10%;
+}
+
 .hero__overlay h1 {
   font-size: 46px;
   font-weight: bold;
@@ -1172,6 +1177,10 @@ html {
   position: relative;
   top: -2rem;
   font-family: Sacramento,Droid Arabic Kufi,Arial,sans-serif;
+}
+
+html[dir="rtl"] .hero__overlay h2 {
+  top: 0;
 }
 
 
