@@ -22,8 +22,25 @@ window.onclick = function(event) {
 
 
 var swiper = new Swiper(".location-swiper", {
-  slidesPerView: 3,
   spaceBetween: 32,
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 32,
+    },
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    }
+  },
   loop: true,
   navigation: {
     nextEl: ".location-swiper-button-next",
@@ -235,3 +252,95 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check
     handleScroll();
 });
+
+// Add scroll event listener for main navbar active state
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    
+    function handleNavbarScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('active');
+        } else {
+            navbar.classList.remove('active');
+        }
+    }
+
+    window.addEventListener('scroll', handleNavbarScroll);
+    // Initial check
+    handleNavbarScroll();
+});
+
+var swiper = new Swiper(".hero-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  loop: true,
+  navigation: { 
+    nextEl: ".hero-swiper-button-next",
+    prevEl: ".hero-swiper-button-prev",
+  },
+});
+
+// Hero section next/prev button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const heroNextBtn = document.querySelector('.hero-swiper-button-next');
+    const heroPrevBtn = document.querySelector('.hero-swiper-button-prev');
+    const heroSwiper = document.querySelector('.hero-swiper');
+    const slides = heroSwiper.querySelectorAll('.swiper-slide');
+    let currentSlide = 0;
+
+    // Initialize Swiper
+    const heroSwiperInstance = new Swiper(".hero-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        loop: true,
+        navigation: { 
+            nextEl: ".hero-swiper-button-next",
+            prevEl: ".hero-swiper-button-prev",
+        },
+        on: {
+            init: function() {
+                updateButtonBackgrounds();
+            },
+            slideChange: function() {
+                currentSlide = this.realIndex;
+                updateButtonBackgrounds();
+            }
+        }
+    });
+
+    function updateButtonBackgrounds() {
+        // Update next button background
+        const nextSlideIndex = (currentSlide + 1) % slides.length;
+        const nextSlideImg = slides[nextSlideIndex].querySelector('img').src;
+        heroNextBtn.querySelector('img').src = nextSlideImg;
+
+        // Update prev button background
+        const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+        const prevSlideImg = slides[prevSlideIndex].querySelector('img').src;
+        heroPrevBtn.querySelector('img').src = prevSlideImg;
+    }
+
+    // Hover effects for next button
+    heroNextBtn.addEventListener('mouseenter', function() {
+        const nextSlideIndex = (currentSlide + 1) % slides.length;
+        const nextSlideImg = slides[nextSlideIndex].querySelector('img').src;
+        this.querySelector('img').src = nextSlideImg;
+    });
+
+    // Hover effects for prev button
+    heroPrevBtn.addEventListener('mouseenter', function() {
+        const prevSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+        const prevSlideImg = slides[prevSlideIndex].querySelector('img').src;
+        this.querySelector('img').src = prevSlideImg;
+    });
+});
+
+
