@@ -1156,7 +1156,6 @@ html {
 .navbar__lang {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .navbar__lang button {
@@ -1165,8 +1164,6 @@ html {
   color: #fff;
   font-size: 18px;
 }
-
-
 
 .hero {
   position: relative;
